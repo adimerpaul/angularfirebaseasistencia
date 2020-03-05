@@ -1,0 +1,3 @@
+<div class="alert alert-info">EL auxiliar de la materia habilitara la asistencia</div>
+<button class="btn btn-success btn-block" *ngFor="let day of days" (click)="asietncia(day)"> Dia habilitado {{day.dia.seconds*1000| date:'yyyy-MM-dd'}} Sigla:{{day.materia}}</button>
+

@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "asistencia2": {
@@ -117,8 +117,16 @@
               "devServerTarget": "asistencia2:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "asistencia2"
+    }
+  },
+  "defaultProject": "asistencia2",
+  "cli": {
+    "analytics": "bf9ee6c4-e583-44f8-9728-682d49f06e08"
+  }
 }

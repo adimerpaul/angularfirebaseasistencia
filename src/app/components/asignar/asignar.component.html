@@ -1,0 +1,28 @@
+<div class="m-2">
+  <div class="alert alert-info">Solo puede registrarse una vez</div>
+</div>
+<div style="text-align: center" *ngIf="asignado; else showLogin">
+  <h2>Cuenta vinculada a: {{ nombreasignado }}!</h2>
+</div>
+<ng-template #showLogin >
+  <div class="div" style="text-align: center">
+    <table class="table">
+      <thead>
+      <tr>
+        <td>#</td>
+        <td>Nombre</td>
+        <td>Asignar</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let studet of studets">
+        <td>{{studet.numero}}</td>
+        <td>{{studet.nombre}}</td>
+        <td><button class="btn btn-success" (click)="asignar(studet)"><i class="fa fa-check"></i> Asignar</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
+
+

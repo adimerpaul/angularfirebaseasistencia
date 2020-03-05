@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "asistenciasis": {
+      "hosting": {
+        "asistencia2": [
+          "asistenciasis"
+        ]
+      }
+    }
+  }
+}

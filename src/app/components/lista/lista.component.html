@@ -1,0 +1,33 @@
+<div class="row mt-2">
+  <div class="col-md-4 ">
+    <input type="date" class="form-control" [(ngModel)]="diat" name="fecha" placeholder="fecha">
+  </div>
+  <div class="col-md-8">
+    <button class="btn btn-warning " (click)="modificar('SIS 2420A')">ACTIVAR ACT SIS 2420A</button>
+    <button class="btn btn-danger " (click)="modificar('INF 3911A')">ACTIVAR WEB INF 3911A</button>
+    <button class="btn btn-success " (click)="modificar('INF 3920A')">ACTIVAR GEO INF 3920A</button>
+  </div>
+  <table class="table mt-2">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Estado</th>
+      <th>Nombre</th>
+      <th>Materia</th>
+      <th>Opcion</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of estudents;let i=index">
+      <td>{{i+1}}</td>
+      <td><small class="bg p-1 text-white" [className]="student.estado=='ACTIVO'?'bg-success':'bg-danger'">{{student.estado}}</small></td>
+      <td>{{student.estudiante}}</td>
+      <td>{{student.materia}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="cambiarsistencia(student,'INACTIVO')"><i class="fa fa-trash"></i> INACTIVO</button>
+        <button class="btn btn-success" (click)="cambiarsistencia(student,'ACTIVO')"><i class="fa fa-check"></i> ACTIVO</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

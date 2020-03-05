@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-12 m-2">
+    <form action="" class="m-2" #form="ngForm" (ngSubmit)="guardar(form)">
+<!--      {{dia.dia}}-->
+      <div class="form-row">
+        <div class="col-sm-5">
+          <input type="date" class="form-control" [ngModel]="dia.dia | date:'yyyy-MM-dd'" ngModel #fecha="ngModel" name="fecha" placeholder="fecha">
+        </div>
+        <div class="col-sm-5">
+          <select name="materia" id="materia" class="form-control" [(ngModel)]="dia.materia">
+            <option *ngFor="let mat of materias" [value]="mat.materia">{{mat.nombre}}</option>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Agregar</button>
+        </div>
+      </div>
+
+    </form>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Materia</th>
+      <th>Estado</th>
+      <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let day of dias">
+      <td>{{day.dia.seconds*1000|date:'yyyy-MM-dd'}}</td>
+      <td>{{day.materia}}</td>
+      <td><small class="bg text-white p-1" [className]="day.estado=='ACTIVO' ? 'bg-success' : 'bg-warning'" >{{day.estado}}</small></td>
+      <td>
+        <button class="btn btn-success p-1" (click)="activar(day,'ACTIVO')"><i class="fa fa-plus"></i> Activar</button>
+        <button class="btn btn-warning p-1" (click)="activar(day,'INACTIVO')"><i class="fa fa-minus"></i> Inactivar</button>
+        <button class="btn btn-danger p-1" (click)="deleteday(day.id)"><i class="fa fa-trash"></i> Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-8 mt-2 offset-md-2 text-center" >
+    <button class="btn btn-warning " (click)="modificar('SIS 2420A')">ACTIVAR ACT SIS 2420A</button>
+    <button class="btn btn-danger " (click)="modificar('INF 3911A')">ACTIVAR WEB INF 3911A</button>
+    <button class="btn btn-success " (click)="modificar('INF 3920A')">ACTIVAR GEO INF 3920A</button>
+    <button class="btn btn-secondary " (click)="modificar('')">OFF ALL</button>
+  </div>
+
+<table class="table mt-2">
+  <thead>
+  <tr>
+    <th>Numero</th>
+    <th>Nombre</th>
+    <th>Materia</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of students">
+    <td>{{student.numero}}</td>
+    <td>{{student.nombre}}</td>
+    <td>{{student.materia}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
